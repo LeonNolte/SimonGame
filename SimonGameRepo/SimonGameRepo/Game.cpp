@@ -16,7 +16,10 @@
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "Simon Virtual Gaming Edition" },
+	m_greenButtonRect{ sf::Vector2f{200.0f, 200.0f} },
 	m_redButtonRect{ sf::Vector2f{200.0f, 200.0f } },
+	m_yellowButtonRect{ sf::Vector2f{200.0f, 200.0f} },
+	m_blueButtonRect{ sf::Vector2f{200.0f, 200.0f} },
 	m_exitGame{false} //when true game will exit
 {
 	setupFontAndText(); // load font
@@ -109,8 +112,11 @@ void Game::update(sf::Time t_deltaTime)
 /// </summary>
 void Game::render()
 {
-	m_window.clear(sf::Color::White);
+	m_window.clear(sf::Color::Black);
 	m_window.draw(m_redButtonRect);
+	m_window.draw(m_greenButtonRect);
+	m_window.draw(m_yellowButtonRect);
+	m_window.draw(m_blueButtonRect);
 	m_window.display();
 }
 
@@ -128,6 +134,14 @@ void Game::setupFontAndText()
 /// </summary>
 void Game::setupButtons()
 {
+	m_greenButtonRect.setFillColor(GREEN);
+	m_greenButtonRect.setPosition(sf::Vector2f(350.0f, 30.0f));
 	m_redButtonRect.setFillColor(RED);
 	m_redButtonRect.setPosition(sf::Vector2f(570.0f, 30.0f));
+	m_yellowButtonRect.setFillColor(YELLOW);
+	m_yellowButtonRect.setPosition(sf::Vector2f(350.0f, 250.0f));
+	m_blueButtonRect.setFillColor(BLUE);
+	m_blueButtonRect.setPosition(sf::Vector2f(570.0f, 250.0f));
+
+
 }

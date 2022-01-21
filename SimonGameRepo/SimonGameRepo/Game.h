@@ -45,6 +45,9 @@ private:
 	const sf::Color YELLOW = sf::Color::Color(180, 180, 0, 255);
 
 	sf::RectangleShape m_redButtonRect;
+	sf::RectangleShape m_blueButtonRect;
+	sf::RectangleShape m_greenButtonRect;
+	sf::RectangleShape m_yellowButtonRect;
 
 };
 

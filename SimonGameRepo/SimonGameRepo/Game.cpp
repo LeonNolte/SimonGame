@@ -105,6 +105,19 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+
+	switch (m_gameMode)
+	{
+	case GameModes::None:
+		std::cout << "No game mode"; // for testing
+		break;
+	case GameModes::Menu:
+		std::cout << "In menu"; // for testing
+		break;
+	case GameModes::InGame:
+		std::cout << "In game"; // for testing
+		break;
+	}
 }
 
 /// <summary>

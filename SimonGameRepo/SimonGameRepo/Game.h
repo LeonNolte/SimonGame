@@ -12,6 +12,13 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 
+enum class GameModes
+{
+	None,
+	Menu,
+	InGame
+};
+
 #include <SFML/Graphics.hpp>
 
 class Game
@@ -43,6 +50,8 @@ private:
 	sf::Text m_redInstruction; // instructions for medium game
 	sf::Text m_yellowInstruction; // instructions for hard game
 	sf::Text m_blueInstruction; // instructions for exiting
+
+	GameModes m_gameMode = GameModes::Menu;
 
 	bool m_exitGame; // control exiting game
 

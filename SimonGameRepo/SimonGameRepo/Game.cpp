@@ -155,6 +155,18 @@ void Game::render()
 }
 
 /// <summary>
+/// to exit game if blue button is pressed
+/// </summary>
+void Game::exitGame()
+{
+	/*sf::Vector2i mousePosition = sf::Mouse::getPosition();
+	sf::Rect<T> blueButton = 	.getLocalBounds();
+
+	if(mousePosition)
+	*/
+}
+
+/// <summary>
 /// load the font and setup the text message for screen
 /// </summary>
 void Game::setupFontAndText()

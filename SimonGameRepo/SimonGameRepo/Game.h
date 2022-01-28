@@ -38,6 +38,8 @@ private:
 	void processMouseReleases(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
+
+	void exitGame();
 	
 	void setupFontAndText();
 	void setupButtons();

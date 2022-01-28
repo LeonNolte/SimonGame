@@ -15,7 +15,7 @@
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 500U, 32U }, "Simon Virtual Gaming Edition" },
+	m_window{ sf::VideoMode{ 800U, 500U, 32U }, "Simon Virtual Pro Gaming Edition" },
 	m_greenButtonRect{ sf::Vector2f{200.0f, 200.0f} },
 	m_redButtonRect{ sf::Vector2f{200.0f, 200.0f } },
 	m_yellowButtonRect{ sf::Vector2f{200.0f, 200.0f} },
@@ -46,7 +46,7 @@ void Game::run()
 {	
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
-	const float fps{ 60.0f };
+	const float fps{ 30.0f };
 	sf::Time timePerFrame = sf::seconds(1.0f / fps); // 60 fps
 	while (m_window.isOpen())
 	{
@@ -79,6 +79,10 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
+		if (sf::Event::MouseButtonReleased == newEvent.type) // user releases mouse button
+		{
+			processMouseReleases(newEvent);
+		}
 	}
 }
 
@@ -92,6 +96,14 @@ void Game::processKeys(sf::Event t_event)
 	if (sf::Keyboard::Escape == t_event.key.code)
 	{
 		m_exitGame = true;
+	}
+}
+
+void Game::processMouseReleases(sf::Event t_event)
+{
+	if (sf::Mouse::Left == t_event.key.code)
+	{
+		std::cout << "Left mouse released";
 	}
 }
 

@@ -35,6 +35,7 @@ private:
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
+	void processMouseReleases(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
 	

@@ -15,7 +15,7 @@
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "Simon Virtual Gaming Edition" },
+	m_window{ sf::VideoMode{ 800U, 500U, 32U }, "Simon Virtual Gaming Edition" },
 	m_greenButtonRect{ sf::Vector2f{200.0f, 200.0f} },
 	m_redButtonRect{ sf::Vector2f{200.0f, 200.0f } },
 	m_yellowButtonRect{ sf::Vector2f{200.0f, 200.0f} },
@@ -23,7 +23,7 @@ Game::Game() :
 	m_exitGame{false} //when true game will exit
 {
 	setupFontAndText(); // load font
-	setupButtons();
+	setupButtons(); // create buttons
 }
 
 /// <summary>
@@ -113,7 +113,15 @@ void Game::update(sf::Time t_deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);
+
+	// text objects
 	m_window.draw(m_title);
+	m_window.draw(m_greenInstruction);
+	m_window.draw(m_redInstruction);
+	m_window.draw(m_yellowInstruction);
+	m_window.draw(m_blueInstruction);
+
+	// buttons
 	m_window.draw(m_redButtonRect);
 	m_window.draw(m_greenButtonRect);
 	m_window.draw(m_yellowButtonRect);
@@ -131,6 +139,7 @@ void Game::setupFontAndText()
 		std::cout << "Error: Could not load Arial font.";
 	}
 
+	// title
 	m_title.setFont(m_ArialBlackfont);
 	m_title.setString("SIMON");
 	m_title.setStyle(sf::Text::Bold);
@@ -138,6 +147,30 @@ void Game::setupFontAndText()
 	m_title.setCharacterSize(75U);
 	m_title.setPosition(30.0f, 20.0f);
 
+	// menu
+	m_greenInstruction.setFont(m_ArialBlackfont);
+	m_greenInstruction.setString("Press green for \nan easy game");
+	m_greenInstruction.setFillColor(GREEN);
+	m_greenInstruction.setCharacterSize(25U);
+	m_greenInstruction.setPosition(30.0f, 120.0f);
+
+	m_redInstruction.setFont(m_ArialBlackfont);
+	m_redInstruction.setString("Press red for \na medium game");
+	m_redInstruction.setFillColor(RED);
+	m_redInstruction.setCharacterSize(25U);
+	m_redInstruction.setPosition(30.0f, 200.0f);
+
+	m_yellowInstruction.setFont(m_ArialBlackfont);
+	m_yellowInstruction.setString("Press yellow for \na hard game");
+	m_yellowInstruction.setFillColor(YELLOW);
+	m_yellowInstruction.setCharacterSize(25U);
+	m_yellowInstruction.setPosition(30.0f, 280.0f);
+
+	m_blueInstruction.setFont(m_ArialBlackfont);
+	m_blueInstruction.setString("Press blue for \nexiting the game");
+	m_blueInstruction.setFillColor(BLUE);
+	m_blueInstruction.setCharacterSize(25U);
+	m_blueInstruction.setPosition(30.0f, 360.0f);
 }
 
 /// <summary>
@@ -153,6 +186,4 @@ void Game::setupButtons()
 	m_yellowButtonRect.setPosition(sf::Vector2f(350.0f, 250.0f));
 	m_blueButtonRect.setFillColor(BLUE);
 	m_blueButtonRect.setPosition(sf::Vector2f(570.0f, 250.0f));
-
-
 }

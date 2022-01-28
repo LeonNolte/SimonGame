@@ -38,6 +38,12 @@ private:
 	sf::Font m_ArialBlackfont; // font used by message
 	sf::Text m_title; // title text object
 
+	// menu instruction text objects
+	sf::Text m_greenInstruction; // instructions for easy game
+	sf::Text m_redInstruction; // instructions for medium game
+	sf::Text m_yellowInstruction; // instructions for hard game
+	sf::Text m_blueInstruction; // instructions for exiting
+
 	bool m_exitGame; // control exiting game
 
 	const sf::Color RED = sf::Color::Color(180, 0, 0, 255); // Red used for button

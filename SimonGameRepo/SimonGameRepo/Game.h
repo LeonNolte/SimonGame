@@ -36,18 +36,19 @@ private:
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Font m_ArialBlackfont; // font used by message
+	sf::Text m_title; // title text object
 
 	bool m_exitGame; // control exiting game
 
-	const sf::Color RED = sf::Color::Color(180, 0, 0, 255);
-	const sf::Color BLUE = sf::Color::Color(0, 0, 180, 255);
-	const sf::Color GREEN = sf::Color::Color(0, 180, 0, 255);
-	const sf::Color YELLOW = sf::Color::Color(180, 180, 0, 255);
+	const sf::Color RED = sf::Color::Color(180, 0, 0, 255); // Red used for button
+	const sf::Color BLUE = sf::Color::Color(0, 0, 180, 255); // Blue used for button
+	const sf::Color GREEN = sf::Color::Color(0, 180, 0, 255); // green used for button
+	const sf::Color YELLOW = sf::Color::Color(180, 180, 0, 255); // yellow used for button
 
-	sf::RectangleShape m_redButtonRect;
-	sf::RectangleShape m_blueButtonRect;
-	sf::RectangleShape m_greenButtonRect;
-	sf::RectangleShape m_yellowButtonRect;
+	sf::RectangleShape m_redButtonRect; // red button rectangle
+	sf::RectangleShape m_blueButtonRect; // blue button rectangle
+	sf::RectangleShape m_greenButtonRect; // green button rectangle
+	sf::RectangleShape m_yellowButtonRect; // yellow button rectangle
 
 };
 

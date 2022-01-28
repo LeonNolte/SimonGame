@@ -5,7 +5,8 @@
 /// C00263935
 /// 21 January 2022
 /// Est. time: 10 hours
-/// Session 1: 10:05 (21 Jan 22)
+/// Session 1: 10:05 - 10:55 (21 Jan 22)
+/// Session 2: 09:20 - 10:55 (28 Jan 22)
 /// -----------------------------------------------
 /// Known bugs: none
 /// </summary>

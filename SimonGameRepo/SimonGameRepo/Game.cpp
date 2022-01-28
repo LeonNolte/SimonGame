@@ -113,6 +113,7 @@ void Game::update(sf::Time t_deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black);
+	m_window.draw(m_title);
 	m_window.draw(m_redButtonRect);
 	m_window.draw(m_greenButtonRect);
 	m_window.draw(m_yellowButtonRect);
@@ -125,7 +126,17 @@ void Game::render()
 /// </summary>
 void Game::setupFontAndText()
 {
+	if (!m_ArialBlackfont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
+	{
+		std::cout << "Error: Could not load Arial font.";
+	}
 
+	m_title.setFont(m_ArialBlackfont);
+	m_title.setString("SIMON");
+	m_title.setStyle(sf::Text::Bold);
+	m_title.setFillColor(sf::Color::White);
+	m_title.setCharacterSize(75U);
+	m_title.setPosition(30.0f, 20.0f);
 
 }
 
